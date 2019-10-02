@@ -73,6 +73,14 @@ def packing_list(int x, double y):
     xy = 1 * [x, y]
     return xy
 
+def packing_unsigned_list(unsigned int length):
+    """
+    >>> packing_unsigned_list(5)
+    [0, 0, 0, 0, 0]
+    """
+    cdef list x = [0] * length
+    return x
+
 def coerce_packing_tuple(int x, int y):
     cdef (int, double) xy = (x, y)
     """

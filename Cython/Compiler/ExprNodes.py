@@ -7500,7 +7500,7 @@ class SequenceNode(ExprNode):
 
                 #counter = code.funcstate.allocate_temp(mult_factor.type, manage_ref=False)
                 counter = Naming.quick_temp_cname
-                code.putln('{ Py_ssize_t %s;' % counter)
+                code.putln('{ %s %s;' % (mult_factor.type, counter))
                 if arg_count == 1:
                     offset = counter
                 else:
